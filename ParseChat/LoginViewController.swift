@@ -55,9 +55,22 @@ class LoginViewController: UIViewController {
                 // optional code for what happens after the alert controller has finished presenting
             }}
         
+        
+        
         newUser.signUpInBackground { (success: Bool, error: Error?) in
             if let error = error {
                 print(error.localizedDescription)
+                
+                let errorController = UIAlertController(title: "Error", message: "There was a problem connecting to the server, please try again", preferredStyle: .alert)
+                
+                // add the OK action to the alert controller
+                errorController.addAction(OKAction)
+                self.present(errorController, animated: true) {
+                    // optional code for what happens after the alert controller has finished presenting
+                }
+                
+                
+                
             } else {
                 print("User Registered successfully")
                 // manually segue to logged in view
