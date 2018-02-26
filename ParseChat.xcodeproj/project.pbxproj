@@ -20,6 +20,7 @@
 		D8815CD8204370210028EDD7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8815CD7204370210028EDD7 /* LoginViewController.swift */; };
 		D8815CDA204384C60028EDD7 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8815CD9204384C60028EDD7 /* ChatViewController.swift */; };
 		D8815CDC204388710028EDD7 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8815CDB204388710028EDD7 /* ChatCell.swift */; };
+		D8815CDE2043B1400028EDD7 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8815CDD2043B1400028EDD7 /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		D8815CD7204370210028EDD7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D8815CD9204384C60028EDD7 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		D8815CDB204388710028EDD7 /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		D8815CDD2043B1400028EDD7 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		E9BF37EB72EDE42ED41219E7 /* Pods-ParseChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParseChatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParseChatTests/Pods-ParseChatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F5C19C2DA9F3024A719BCAB1 /* Pods_ParseChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParseChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				D8815CAD2043570D0028EDD7 /* Main.storyboard */,
+				D8815CDD2043B1400028EDD7 /* Message.swift */,
 				D8815CDB204388710028EDD7 /* ChatCell.swift */,
 				D8815CD9204384C60028EDD7 /* ChatViewController.swift */,
 				D8815CD7204370210028EDD7 /* LoginViewController.swift */,
@@ -472,6 +475,7 @@
 				D8815CD8204370210028EDD7 /* LoginViewController.swift in Sources */,
 				D8815CAC2043570D0028EDD7 /* ViewController.swift in Sources */,
 				D8815CDA204384C60028EDD7 /* ChatViewController.swift in Sources */,
+				D8815CDE2043B1400028EDD7 /* Message.swift in Sources */,
 				D8815CDC204388710028EDD7 /* ChatCell.swift in Sources */,
 				D8815CAA2043570D0028EDD7 /* AppDelegate.swift in Sources */,
 			);
