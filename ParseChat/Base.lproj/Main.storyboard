@@ -59,11 +59,49 @@
                     <connections>
                         <outlet property="passwordField" destination="WiA-4l-rbs" id="XJg-tY-mbh"/>
                         <outlet property="usernameField" destination="ASw-tG-oHb" id="Eqo-fd-bqN"/>
+                        <segue destination="Uci-ms-g9Q" kind="presentation" identifier="loginSegue" id="xZr-R3-opU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="24.800000000000001" y="36.431784107946029"/>
+        </scene>
+        <!--Chat-->
+        <scene sceneID="bRd-uV-KO6">
+            <objects>
+                <viewController id="F3X-c9-jY4" customClass="ChatViewController" customModule="ParseChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f5F-m8-xGh"/>
+                        <viewControllerLayoutGuide type="bottom" id="jdD-7E-Ve6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7mA-jw-3pe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Chat" id="khv-DP-dQl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Wx-2t-3Jw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1900" y="35.532233883058474"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Quv-sv-BNX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uci-ms-g9Q" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gql-7x-0cY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="F3X-c9-jY4" kind="relationship" relationship="rootViewController" id="RqG-Hw-KfJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CxU-2H-HyB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="960.79999999999995" y="35.532233883058474"/>
         </scene>
     </scenes>
 </document>
