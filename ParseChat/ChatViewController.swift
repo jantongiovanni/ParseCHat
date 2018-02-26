@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import Parse
 
-class ChatViewController: UIViewController {
+class ChatViewController: UIViewController, UITableViewDataSource {
 
+    @IBOutlet weak var chatButton: UIButton!
+    @IBOutlet weak var chatMessage: UITextField!
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.dataSource = self
         // Do any additional setup after loading the view.
     }
 
@@ -21,7 +27,28 @@ class ChatViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onSend(_ sender: AnyObject) {
+        let message = PFObject(className: "Message")
+        message["text"] = chatMessage.text ?? ""
+        message.saveInBackground { (success, error) in
+            if success {
+                print("The message was saved!")
+                self.chatMessage.text = ""
+            } else if let error = error {
+                print("Problem saving message: \(error.localizedDescription)")
+            }
+        }
+        
+    }
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath)
+        return cell
+    }
     /*
     // MARK: - Navigation
 
