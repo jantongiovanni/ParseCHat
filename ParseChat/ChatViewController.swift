@@ -37,6 +37,7 @@ class ChatViewController: UIViewController, UITableViewDataSource {
     @IBAction func onSend(_ sender: AnyObject) {
         let message = PFObject(className: "Message")
         message["text"] = chatMessage.text ?? ""
+        message["user"] = PFUser.current()
         message.saveInBackground { (success, error) in
             if success {
                 print("The message was saved!")
@@ -56,13 +57,20 @@ class ChatViewController: UIViewController, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath) as! ChatCell
         
         cell.messageLabel.text = messages[indexPath.row]["text"] as? String
-
+        if let user = messages[indexPath.row]["user"] as? PFUser {
+            // User found! update username label with username
+            cell.usernameLabel.text = user.username
+        } else {
+            // No user found, set default username
+            cell.usernameLabel.text = "🤖"
+        }
         
         return cell
     }
 
     func fetchMessages(){
     let query = Message.query()
+        query?.includeKey("user")
        query?.addDescendingOrder("createdAt")
         query?.limit = 20
         
