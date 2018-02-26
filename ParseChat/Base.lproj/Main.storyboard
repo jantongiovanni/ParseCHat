@@ -69,7 +69,7 @@
         <!--Chat-->
         <scene sceneID="bRd-uV-KO6">
             <objects>
-                <viewController id="F3X-c9-jY4" customClass="ChatViewController" customModule="ParseChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatViewController" id="F3X-c9-jY4" customClass="ChatViewController" customModule="ParseChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f5F-m8-xGh"/>
                         <viewControllerLayoutGuide type="bottom" id="jdD-7E-Ve6"/>
