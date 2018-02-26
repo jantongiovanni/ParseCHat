@@ -23,7 +23,9 @@ class ChatViewController: UIViewController, UITableViewDataSource {
         tableView.dataSource = self
         fetchMessages()
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.onTimer), userInfo: nil, repeats: true)
-        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        // Provide an estimated row height. Used for calculating scroll indicator
+        tableView.estimatedRowHeight = 50
         // Do any additional setup after loading the view.
     }
 
@@ -53,7 +55,7 @@ class ChatViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath) as! ChatCell
         
-        cell.messageLabel.text = messages[indexPath.row]["text"] as! String
+        cell.messageLabel.text = messages[indexPath.row]["text"] as? String
 
         
         return cell
@@ -61,7 +63,7 @@ class ChatViewController: UIViewController, UITableViewDataSource {
 
     func fetchMessages(){
     let query = Message.query()
-       query?.addAscendingOrder("createdAt")
+       query?.addDescendingOrder("createdAt")
         query?.limit = 20
         
         query?.findObjectsInBackground{ (messages: [PFObject]?,error: Error?) -> Void in
